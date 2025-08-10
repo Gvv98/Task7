@@ -9,11 +9,11 @@ The codes for the sum are quite simple, especially the Julia one. Here, I assume
 The logic for the tests is the following: \
 1. First check: if $x=0$, then $$\vec{d}=\vec{y}$$;
 2. Second test: if $y=0$ then $\vec{d}=a\cdot\vec{x}$;
-3. Last check: if $r1=a x+y$ and $$r2=a (2 x)+(2 y)$$, then $$r1=r2$$ (linearity).
+3. Last check: if $r1=a x+y$ and $$r2=a (2 x)+(2 y)$$, then $$2 r1=r2$$ (linearity).
 These tests are performed considering some values for $a$, $x$ and $y$.
 
 # Code in Julia
-In Julia, I use the **Test** package to verify the linearity of the sum. The first part of the code defines the **vector_sum** function. The second part performs tests on **vector_sum**. Including this code in Julia, we can immediately see if any test fails. Then, we can use vector_sum by passing the arguments (a,x,y,N).
+In Julia, I use the **Test** package to verify the linearity of the sum. In - you can find the **vector_sum** function. The test is implementend in **vector_sum**. Including this code in Julia, we can immediately see if any test fails. Then, we can use vector_sum by passing the arguments (a,x,y,N).
 
 ```
 using Test
