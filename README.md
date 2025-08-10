@@ -13,7 +13,7 @@ The logic for the tests is the following: \
 These tests are performed considering some values for $a$, $x$ and $y$.
 
 # Code in Julia
-In Julia, I use the **Test** package to verify the linearity of the sum. In - you can find the **vector_sum** function. The test is implementend in **vector_sum**. Including this code in Julia, we can immediately see if any test fails. Then, we can use vector_sum by passing the arguments (a,x,y,N).
+In Julia, I use the **Test** package to verify the linearity of the sum. In [vectorsum_test.jl](https://github.com/Gvv98/Task7/blob/main/vectorsum_test.jl) you can find the **vector_sum** function. The test is implementend in **run_test**. We can use  by passing the arguments (a,x,y,N).
 
 ```
 using Test
