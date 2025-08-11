@@ -13,47 +13,11 @@ The logic for the tests is the following: \
 These tests are performed considering some values for $a$, $x$ and $y$.
 
 # Code in Julia
-In Julia, I use the **Test** package to verify the linearity of the sum. In [vectorsum_test.jl](https://github.com/Gvv98/Task7/blob/main/vectorsum_test.jl) you can find the **vector_sum** function. The test is implementend in **run_test** contained in **main.jl**. We can run the code by passing ``julia main.jl  x y N``.
-
-```
-using Test
-
-## Function that performs the vector sum: z = a * x + y
-function vector_sum(a::Real, x::Real, y::Real, N::Integer)
-    # in doing so, you can write any number (without points) as arguments of the function
-    a = Float64(a)
-    x = Float64(x)
-    y = Float64(y)
-    N = Int(N)
-    xvec = fill(x, N)
-    yvec = fill(y, N)
-    return a .* xvec .+ yvec
-end
-
-## Unit tests
-function run_tests()
-    println("Running tests...")
-
-    # Test 1: if y=0, result should be a*x
-    @test vector_sum(2.0, 3.0, 0.0, 5) == fill(2.0 * 3.0, 5)
-
-    # Test 2: if x=0, result should be y
-    @test vector_sum(2.0, 0.0, 3.0, 5) == fill(3.0, 5)
-
-    # Test 3: doubling x and y doubles the result
-    r1 = vector_sum(1.5, 2.0, 3.0, 5)
-    r2 = vector_sum(1.5, 4.0, 6.0, 5)
-    @test r2 == 2 .* r1
-
-    println("All tests passed.")
-end
-
-run_tests()
-```
+In Julia, we use the **Test** package to verify the linearity of the sum. In [vectorsum_test.jl](https://github.com/Gvv98/Task7/blob/main/vectorsum_test.jl) you can find the **vector_sum** function. The test is implementend in **run_test** contained in **main.jl**. We can run the code by passing ``julia main.jl  a x y N``.
 
 
 # Code in C
-in C there is no built-in testing package. Here we follow the same strategy as before: build vectors $\vec{x}$ and $\vec{y}$, define the sum function **vectro_sum**, then test the linearity. The code show when tests fail. Finally, it perform vector sum with given imput values. 
+In C there is no built-in testing package. Here we follow the same strategy as before: build vectors $\vec{x}$ and $\vec{y}$, define the sum function **vector_sum**, then test the linearity. The code show when tests fail. Finally, it perform vector sum with given imput values. 
 
 ```
 #include <stdio.h>
