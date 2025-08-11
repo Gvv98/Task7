@@ -17,5 +17,5 @@ In Julia, we use the **Test** package to verify the linearity of the sum. In [ve
 
 
 # Code in C
-In C there is no built-in testing package. Here we follow the same strategy as before: define the sum function [vector_sum.c](https://github.com/Gvv98/Task7/blob/main/vector_sum.c), then test the linearity within **main.c**. Compile the codes with  ``gcc -o mainsum main.c vector_sum.c -lm``, then run it with ``./ mainsum a x y N``. The code immediately tells you if ``vector_sum.c`` passes all the tests and performs the sum with the values provided as input.
+In C there is no built-in testing package. Here we follow the same strategy as before: define the sum function [vector_sum.c](https://github.com/Gvv98/Task7/blob/main/vector_sum.c), then test the linearity within [main.c](https://github.com/Gvv98/Task7/blob/main/main.c). Compile the codes with  ``gcc -o mainsum main.c vector_sum.c -lm``, then run it with ``./ mainsum a x y N``. The code immediately tells you if ``vector_sum.c`` passes all the tests and performs the sum with the values provided as input.
 
